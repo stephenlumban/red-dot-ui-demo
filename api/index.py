@@ -4,6 +4,7 @@ from flask import Flask, request, Response
 
 app = Flask(__name__)
 
+@app.route('/', methods=['POST'])
 @app.route('/api/detect', methods=['POST'])
 def proxy_detect():
     api_url = os.environ.get('DETECTION_API_URL')
